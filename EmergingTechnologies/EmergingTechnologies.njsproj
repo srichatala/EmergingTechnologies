@@ -30,9 +30,23 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Public\Scripts\angular-route.min.js" />
+    <Compile Include="Public\Scripts\angular.min.js" />
     <Compile Include="server.js" />
     <Content Include="package.json" />
+    <Content Include="Public\index.html" />
+    <Content Include="Public\Scripts\angular-route.min.js.map" />
+    <Content Include="Public\Scripts\angular.min.js.map" />
+    <Content Include="Public\Styles\bootstrap.css" />
+    <Content Include="Public\Styles\bootstrap.css.map" />
     <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Public\" />
+    <Folder Include="Public\Assets\" />
+    <Folder Include="Public\Assets\Images\" />
+    <Folder Include="Public\Scripts\" />
+    <Folder Include="Public\Styles\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
