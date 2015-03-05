@@ -1,0 +1,10 @@
+{
+  "name": "EmergingTechnologies",
+  "version": "0.0.0",
+  "description": "EmergingTechnologies",
+  "main": "server.js",
+  "author": {
+    "name": "chatalas",
+    "email": ""
+  }
+}
