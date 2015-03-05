@@ -19,7 +19,7 @@
     <OutputPath>.</OutputPath>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
-    <ProjectView>ShowAllFiles</ProjectView>
+    <ProjectView>ProjectFiles</ProjectView>
     <NodejsPort>1337</NodejsPort>
     <StartWebBrowser>true</StartWebBrowser>
   </PropertyGroup>
@@ -33,12 +33,17 @@
     <Compile Include="Public\Scripts\angular-route.min.js" />
     <Compile Include="Public\Scripts\angular.min.js" />
     <Compile Include="server.js" />
+    <Content Include="Public\DoctorReg.html" />
+    <Content Include="Public\LoginDoc.html" />
     <Content Include="package.json" />
+    <Content Include="Public\PatientReg.html" />
+    <Content Include="Public\Assets\Images\header.png" />
     <Content Include="Public\index.html" />
     <Content Include="Public\Scripts\angular-route.min.js.map" />
     <Content Include="Public\Scripts\angular.min.js.map" />
     <Content Include="Public\Styles\bootstrap.css" />
     <Content Include="Public\Styles\bootstrap.css.map" />
+    <Content Include="Public\Styles\Styles.css" />
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>

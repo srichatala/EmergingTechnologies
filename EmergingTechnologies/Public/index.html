@@ -1,11 +1,40 @@
 ﻿<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" ng-app="ET">
 <head>
-    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Emerging Technologies App</title>
+    <link href="Styles/bootstrap.css" rel="stylesheet" />
+    <link href="Styles/Styles.css" rel="stylesheet" />
 </head>
 <body>
+    <div class="container">
+        <header>
+            <img class="img-responsive" src="Assets/Images/header.png" />
+        </header>
+
+        <nav role="navigation" class="navbar navbar-inverse">
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Doctor</a></li>
+                    <li><a href="#">Patient</a></li>
+                </ul>
+                <form role="search" class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" placeholder="Search" class="form-control">
+                        <input id="Submit1" class="btn btn-warning" type="submit" value="GO" />
+                    </div>
+                </form>
+            </div>
+        </nav>
+        <div ng-view>
+
+        </div>
+        <footer class="modal-footer">
+                <p> Copyright © 2014-15 Village World Corp. All rights reserved.</p>
+        </footer>
+    </div>
 
 </body>
 </html>
