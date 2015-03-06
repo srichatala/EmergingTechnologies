@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Emerging Technologies App</title>
     <link href="Styles/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <link href="Styles/Styles.css" rel="stylesheet" />
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+    <script src="Data/app.js"></script>
+    <script src="Data/ControllersDoc.js"></script>
+    <script src="Data/ControllersPatient.js"></script>
 </head>
 <body>
     <div class="container">
@@ -16,9 +22,9 @@
         <nav role="navigation" class="navbar navbar-inverse">
             <div id="navbarCollapse" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Doctor</a></li>
-                    <li><a href="#">Patient</a></li>
+                    <li class="active"><a href="#/">Home</a></li>
+                    <li><a href="#DocLogin">Doctor</a></li>
+                    <li><a href="#PatientLogin">Patient</a></li>
                 </ul>
                 <form role="search" class="navbar-form navbar-right">
                     <div class="form-group">
@@ -32,7 +38,7 @@
 
         </div>
         <footer class="modal-footer">
-                <p> Copyright © 2014-15 Village World Corp. All rights reserved.</p>
+                Copyright © 2014-15 Village World Corp. All rights reserved.
         </footer>
     </div>
 

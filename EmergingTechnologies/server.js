@@ -1,5 +1,12 @@
 ﻿var express = require('express');
 var app = express();
+var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
+
+var configDB = require('./config/database.js');
+
+// configuration ===============================================================
+mongoose.connect(configDB.url); // connect to our database
 
 //prodive path to setup start page
 app.use(express.static(__dirname + '/Public'));

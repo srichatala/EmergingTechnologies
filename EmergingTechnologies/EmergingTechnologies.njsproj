@@ -30,13 +30,20 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Config\Database.js" />
+    <Compile Include="Config\Passport.js" />
+    <Compile Include="Public\Data\ControllersDoc.js" />
+    <Compile Include="Public\Data\ControllersPatient.js" />
     <Compile Include="Public\Scripts\angular-route.min.js" />
     <Compile Include="Public\Scripts\angular.min.js" />
+    <Compile Include="Public\Data\app.js" />
     <Compile Include="server.js" />
-    <Content Include="Public\DoctorReg.html" />
-    <Content Include="Public\LoginDoc.html" />
+    <Content Include="Public\View\DoctorReg.html" />
+    <Content Include="Public\View\Home.html" />
+    <Content Include="Public\View\DocLogin.html" />
     <Content Include="package.json" />
-    <Content Include="Public\PatientReg.html" />
+    <Content Include="Public\View\PatientLogin.html" />
+    <Content Include="Public\View\PatientReg.html" />
     <Content Include="Public\Assets\Images\header.png" />
     <Content Include="Public\index.html" />
     <Content Include="Public\Scripts\angular-route.min.js.map" />
@@ -47,9 +54,12 @@
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Config\" />
     <Folder Include="Public\" />
     <Folder Include="Public\Assets\" />
     <Folder Include="Public\Assets\Images\" />
+    <Folder Include="Public\Data\" />
+    <Folder Include="Public\View\" />
     <Folder Include="Public\Scripts\" />
     <Folder Include="Public\Styles\" />
   </ItemGroup>
