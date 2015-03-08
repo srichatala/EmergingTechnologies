@@ -1,6 +1,4 @@
-﻿var app = angular.module('ET', ['ngRoute',
-    'ControllersDoctor', 
-    'ControllersPatient']);
+﻿var app = angular.module('App', ['ngRoute','ControllersDoctor', 'ControllersPatient']);
 
 app.config(['$routeProvider',
     function ($routeProvider){ 
@@ -10,15 +8,15 @@ app.config(['$routeProvider',
         }).
         when('/DocReg', {
             templateUrl: 'View/DoctorReg.html',
-            constroller:'DoctorRegistration'
+            controller:'DocReg'
         }).
         when('/PatientReg', {
             templateUrl: 'View/PatientReg.html',
-            constroller: 'PatientRegistration'
+            controller: 'PatientRegistration'
         }).
         when('/DocLogin', {
             templateUrl: 'View/DocLogin.html',
-            constroller: 'DocLogin'
+            controller: 'DocLogin'
         }).
          when('/PatientLogin', {
             templateUrl: 'View/PatientLogin.html',

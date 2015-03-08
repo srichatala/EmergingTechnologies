@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Config\" />
+    <Folder Include="router\" />
     <Folder Include="Public\" />
     <Folder Include="Public\Assets\" />
     <Folder Include="Public\Assets\Images\" />

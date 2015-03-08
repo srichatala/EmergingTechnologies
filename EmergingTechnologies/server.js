@@ -3,10 +3,13 @@ var app = express();
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
-var configDB = require('./config/database.js');
+var mongoOps = require('./Config/Database.js');
 
-// configuration ===============================================================
-mongoose.connect(configDB.url); // connect to our database
+app.use(bodyParser.urlencoded());
+
+app.use(bodyParser.json());
+
+app.post('/docReg', mongoOps.add);
 
 //prodive path to setup start page
 app.use(express.static(__dirname + '/Public'));
