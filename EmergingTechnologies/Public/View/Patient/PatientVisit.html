@@ -1,0 +1,23 @@
+﻿<h3>Patient Visit</h3>
+<form name="myForm" novalidate> 
+    <div class="form-group">
+        <label for="Doctor">Patient Name</label>
+        <select class="form-control" ng-model="visit._id"
+                ng-options="patientModel._id as (patientModel.firstname+' '+patientModel.lastname) for patientModel in patientModels"></select>
+    </div>
+    <div class="form-group">
+        <label for="lname">Complaint</label>
+        <input type="text" name="lname" class="form-control" placeholder="Complaint"
+               ng-model="visit.complaint" required />
+    </div>
+    <div class="form-group">
+        <label for="age">Total Bill</label>
+        <input type="text" name="age" placeholder="Total Bill " class="form-control"
+               ng-pattern="/^[0-9.]+$/" ng-model="visit.billing_amt" required />
+        <span ng-show="myForm.age.$error.pattern">Enter numbers only</span>
+    </div>
+   <div class="form-group">
+       <button type="submit" ng-disabled="myFrom.$invalid" ng-click="submit(visit)" class="btn btn-warning">Submit</button>
+    </div>
+    {{message}}
+</form>

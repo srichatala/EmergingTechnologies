@@ -1,1 +1,0 @@
-﻿var appDoc = angular.module('ControllersPatient', []);
