@@ -131,7 +131,14 @@ var auth = function (req, res, next) {
     else
         next();
 };
+//list of single doctor's patients list
 
+app.get('/PatientInfoDoc', auth, function (req, res) {
+    patientsModel.findById(req.params.id, function(err, user){
+    user.where(function (err, users) {
+        res.json(users);
+    });
+});
 //patient registration
 
 app.post('/patientreg', function (req, res) {

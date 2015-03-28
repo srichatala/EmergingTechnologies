@@ -9,9 +9,9 @@ app.config(function ($routeProvider,$httpProvider){
             templateUrl: 'View/DoctorReg.html',
             controller: 'DocRegCtrl'
         }).
-        when('/DocReg', {
-            templateUrl: 'View/DoctorReg.html',
-            controller: 'DocRegCtrl'
+        when('/PatientList', {
+            templateUrl: 'View/Doctor/PatientList.html',
+            controller: 'patientListCtrl'
         }).
         when('/profile', {
             templateUrl: 'View/Doctor/Profile.html',
