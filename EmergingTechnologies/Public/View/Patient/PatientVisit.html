@@ -11,7 +11,7 @@
                ng-model="visit.complaint" required />
     </div>
     <div class="form-group">
-        <label for="age">Total Bill</label>
+        <label for="age">Total Bill (CAD $)</label>
         <input type="text" name="age" placeholder="Total Bill " class="form-control"
                ng-pattern="/^[0-9.]+$/" ng-model="visit.billing_amt" required />
         <span ng-show="myForm.age.$error.pattern">Enter numbers only</span>

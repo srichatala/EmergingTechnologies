@@ -13,7 +13,7 @@ var db = mongoose.connect('mongodb://localhost/hmis');
 
 //appending schema to usermodel
 var UserSchema = new mongoose.Schema({
-    username:String,
+    username: String,
     name: String,
     phoneno: String,
     email: String,
@@ -134,11 +134,13 @@ var auth = function (req, res, next) {
 //list of single doctor's patients list
 
 app.get('/PatientInfoDoc', auth, function (req, res) {
-    patientsModel.findById(req.params.id, function(err, user){
-    user.where(function (err, users) {
-        res.json(users);
+    patientsModel.findById(req.params.id, function (err, user) {
+        user.where(function (err, users) {
+            res.json(users);
+        });
     });
 });
+
 //patient registration
 
 app.post('/patientreg', function (req, res) {
