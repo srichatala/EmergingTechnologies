@@ -61,7 +61,19 @@ var checkLoggedin = function ($q, $timeout, $http, $location, $rootScope) {
 
     return deferred.promise;
 };
+app.controller("search", function ($scope,$http) {
+    $scope.renderpatientModels = function (response) {
+        $scope.doctorModels = response;
+    };
 
+    //get request to get dpctor names from doctor schema
+    $scope.DocInfo = function () {
+        $http.get('/DocInfo')
+            .success($scope.renderpatientModels);
+    }
+    //initialization of the DocInfo method active when page is loaded
+    $scope.DocInfo();
+});
 app.controller("NavCtrl", function ($scope, $http, $location, $rootScope) {
     $scope.logout = function () {
         $http.post("/logout")

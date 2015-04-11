@@ -48,8 +48,13 @@
                 </span>
                 <form role="search" class="navbar-form navbar-right">
                     <div class="form-group">
-                        <input type="text" placeholder="Search" class="form-control">
-                        <input id="Submit1" class="btn btn-warning" type="submit" value="GO" />
+                        <div ng-controller="search">
+                            <select class="form-control" ng-model="patientModel.family_doctor_id" ng-change="correctlySelected.value"
+                                    ng-options="doctorModel.username as doctorModel.username for doctorModel in doctorModels">
+                                <option value="">Search for doctor</option>
+                            </select>
+                        </div>
+                        <!--<input id="Submit1" class="btn btn-warning" type="submit" value="GO" />-->
                     </div>
                 </form>
             </div>

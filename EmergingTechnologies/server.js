@@ -23,18 +23,26 @@ var UserSchema = new mongoose.Schema({
 //creating UserModel schema in database
 var UserModel = mongoose.model('UserModel', UserSchema);
 
+//var childSchema = new mongoose.Schema({ name: 'string' });
 
-var visits = new mongoose.Schema({
+//var parentSchema = new mongoose.Schema({
+//    children: [childSchema]
+//});
+
+//var Parent = mongoose.model('Parent', parentSchema);
+//var parent = new Parent;
+
+
+
+var visit = new mongoose.Schema({
     complaint: String,
     billing_amt: Number
 });
 
-var visitsModel = mongoose.model('visits', visits);
-
 var patientSchema = new mongoose.Schema({
     firstname: String,
     lastname: String,
-    visits: [visitsModel],
+    visits: [{ complaint: String, billing_amt: Number }],
     age: Number,
     family_doctor_id: String,
     phoneno: Number,
@@ -42,11 +50,9 @@ var patientSchema = new mongoose.Schema({
     last_modified: { type: Date, default: Date.now }
 });
 
+
+
 var patientsModel = mongoose.model('patientsModel', patientSchema);
-
-
-
-
 
 
 app.use(bodyParser.json()); // for parsing application/json
@@ -127,17 +133,16 @@ app.get('/DocInfo', function (req, res) {
 
 var auth = function (req, res, next) {
     if (!req.isAuthenticated())
-        res.send(401);
+        res.sendStatus(401);
     else
         next();
 };
 //list of single doctor's patients list
 
 app.get('/PatientInfoDoc', auth, function (req, res) {
-    patientsModel.findById(req.params.id, function (err, user) {
-        user.where(function (err, users) {
-            res.json(users);
-        });
+    console.log(req.user.username);
+    patientsModel.find({family_doctor_id : req.user.username }, function (err, user) {
+        res.json(user);
     });
 });
 
@@ -189,19 +194,22 @@ app.delete("/patientModelsRemove/:id", function (req, res) {
         });
     });
 });
+
 //Post patient visits
 app.post('/patientVists', function (req, res) {
-    var patientVisit = new visitsModel(req.body);
-    patientVisit.save(function (err, doc) {
-        console.log(doc);
-        res.json(doc);
-    });
+    patientsModel.findOne({ _id: req.body._id }, function (err, Patients) {
+        Patients.visits.push({ complaint: req.body.complaint, billing_amt: req.body.billing_amt })
+        Patients.save(function (err, item) {
+            res.json(item);
+        })
+    })
 });
 
-//creating a port for this application
-var port = process.env.PORT || 1234;
 
-app.listen(port);
+    //creating a port for this application
+    var port = process.env.PORT || 1234;
 
-//proving more information of application URL
-console.log('Application running on http://localhost:' + port);
+    app.listen(port);
+
+    //proving more information of application URL
+    console.log('Application running on http://localhost:' + port);

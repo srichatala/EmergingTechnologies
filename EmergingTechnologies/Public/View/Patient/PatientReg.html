@@ -22,7 +22,7 @@
         <label for="Doctor">Doctor Name</label>
         <select class="form-control" ng-model="patientModel.family_doctor_id" ng-change="correctlySelected.value"
                 ng-options="doctorModel.username as doctorModel.username for doctorModel in doctorModels">
-                <option>Select your family doctor</option>
+                <option value="">Select your family doctor</option>
         </select>
     </div>
     <div class="form-group">

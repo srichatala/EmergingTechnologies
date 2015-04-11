@@ -3,7 +3,9 @@
     <div class="form-group">
         <label for="Doctor">Patient Name</label>
         <select class="form-control" ng-model="visit._id"
-                ng-options="patientModel._id as (patientModel.firstname+' '+patientModel.lastname) for patientModel in patientModels"></select>
+                ng-options="patientModel._id as (patientModel.firstname+' '+patientModel.lastname) for patientModel in patientModels">
+            <option value="">Select patient name</option>
+        </select>
     </div>
     <div class="form-group">
         <label for="lname">Complaint</label>
