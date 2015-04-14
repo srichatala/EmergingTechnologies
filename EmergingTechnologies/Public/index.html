@@ -6,9 +6,13 @@
     <title>Emerging Technologies App</title>
     <link href="Styles/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link href="Styles/tree.css" rel="stylesheet" />
+    <link href="Styles/angular-ui-tree.min.css" rel="stylesheet" />
+    <link href="Styles/demo.css" rel="stylesheet" />
     <link href="Styles/Styles.css" rel="stylesheet" />
     <script src="Scripts/angular.min.js"></script>
     <script src="Scripts/angular-route.min.js"></script>
+    <script src="Scripts/angular-ui-tree.js"></script>
     <script src="app/router/app.js"></script>
     <script src="app/controllers/DocRegCtrl.js"></script>
     <script src="app/controllers/DocLoginCtrl.js"></script>
@@ -19,6 +23,7 @@
     <script src="app/controllers/PatientDetails.js"></script>
     <script src="app/controllers/PatientVistCtrl.js"></script>
     <script src="app/controllers/PatientList.js"></script>
+    <script src="app/controllers/PatientVisitsListCtrl.js"></script>
 </head>
 <body>
     <div class="container">
@@ -37,6 +42,7 @@
                         <li><a href="#PatientReg">Patient</a></li>
                         <li><a href="#PatientVisit">Patient Visit</a></li>
                         <li><a href="#PatientDetails">Patient Details</a></li>
+                        <li><a href="#PatientVisitsList">Patient Visits List</a></li>
                     </ul>
                 </span>
                 <span ng-show="currentUser">

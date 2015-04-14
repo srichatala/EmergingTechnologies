@@ -14,9 +14,22 @@
         </ul><hr />
         Age:<b>{{item.age}}</b><hr />
         Phone Number:<b>{{item.phoneno}}</b><hr />
-        Family Doctor:<b>
-            {{item.family_doctor_id}}<hr />
-            <hr />
+         Family Doctor:<b>{{item.family_doctor_id}}<hr />
+        <hr />
 
     </li>
 </ul>
+<!--<ul>
+    <li ng-repeat="item in patientModels" ng-click="showStates(item)">
+        Patient Name:<b>{{item.firstname}} {{item.lastname}}</b> <a class="btn btn-success">+ Visits</a>
+        <hr />
+
+        <ul>
+            <li ng-repeat="subItem in item.visits" ng-show="item.active">
+                Complaint:<b>{{subItem.complaint}}</b><br />
+                Billing Amount:<b>{{subItem.billing_amt}}</b><hr />
+            </li>
+        </ul>
+        <hr />
+    </li>
+</ul>-->

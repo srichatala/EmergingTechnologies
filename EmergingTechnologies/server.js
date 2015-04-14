@@ -7,9 +7,24 @@ var LocalStrategy = require('passport-local').Strategy;
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var mongoose = require('mongoose');
+var uriUtil = require('mongodb-uri');
 
+var options = {
+    server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
+    replset: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }
+};
 //database connection
-var db = mongoose.connect('mongodb://localhost/hmis');
+var mongodbUri = 'mongodb://heroku_app35758595:lv56hiaj41042a2hh58vq9mq6o@ds061621.mongolab.com:61621/heroku_app35758595';
+var mongooseUri = uriUtil.formatMongoose(mongodbUri);
+
+mongoose.connect(mongooseUri, options);
+var conn = mongoose.connection;
+
+conn.on('error', console.error.bind(console, 'connection error:'));
+
+conn.once('open', function () {
+    console.log("Database connected");
+});
 
 //appending schema to usermodel
 var UserSchema = new mongoose.Schema({
@@ -22,16 +37,6 @@ var UserSchema = new mongoose.Schema({
 
 //creating UserModel schema in database
 var UserModel = mongoose.model('UserModel', UserSchema);
-
-//var childSchema = new mongoose.Schema({ name: 'string' });
-
-//var parentSchema = new mongoose.Schema({
-//    children: [childSchema]
-//});
-
-//var Parent = mongoose.model('Parent', parentSchema);
-//var parent = new Parent;
-
 
 
 var visit = new mongoose.Schema({
@@ -103,7 +108,7 @@ app.get('/loggedin', function (req, res) {
 //logout function to remove cuurent user information
 app.post('/logout', function (req, res) {
     req.logOut();
-    res.send(200);
+    res.sendStatus(200);
 });
 
 //Creating doctor profile

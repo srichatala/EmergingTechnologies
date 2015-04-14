@@ -32,6 +32,10 @@ app.config(function ($routeProvider,$httpProvider){
             templateUrl: 'View/Patient/PatientDetails.html',
             controller: 'PatientDetailsCtrl'
         }).
+        when('/PatientVisitsList', {
+           templateUrl: 'View/Patient/PatientVisitsList.html',
+            controller: 'PatientVisitsListCtrl'
+        }).
         when('/DocLogin', {
             templateUrl: 'View/DocLogin.html',
             controller:'DocLoginCtrl'

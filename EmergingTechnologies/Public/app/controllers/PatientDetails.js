@@ -1,4 +1,10 @@
-﻿app.controller('PatientDetailsCtrl', function ($scope, $http) {
+﻿app.filter('offset', function () {
+    return function (input, start) {
+        start = parseInt(start, 10);
+        return input.slice(start);
+    };
+});
+app.controller('PatientDetailsCtrl', function ($scope, $http) {
     $scope.renderpatientModels = function (response) {
         $scope.doctorModels = response;
     };
@@ -48,4 +54,5 @@
             $scope.PatientInfo();
         });
     }
+
 });
