@@ -1,0 +1,35 @@
+﻿<h3>Patient Visits Information</h3>
+<ul>
+    <li ng-repeat="item in patientModels" ng-click="showStates(item)">
+        First Name:<b>{{item.firstname}}</b><hr />
+        Last Name:<b>{{item.lastname}}</b><hr />
+        <a class="btn btn-success">+ Visits</a>
+        <ul>
+            <li ng-repeat="subItem in item.visits" ng-show="item.active">
+
+                Complaint:<b>{{subItem.complaint}}</b><br />
+                Billing Amount:<b>{{subItem.billing_amt}}</b>
+                <hr />
+            </li>
+        </ul><hr />
+        Age:<b>{{item.age}}</b><hr />
+        Phone Number:<b>{{item.phoneno}}</b><hr />
+         Family Doctor:<b>{{item.family_doctor_id}}<hr />
+        <hr />
+
+    </li>
+</ul>
+<!--<ul>
+    <li ng-repeat="item in patientModels" ng-click="showStates(item)">
+        Patient Name:<b>{{item.firstname}} {{item.lastname}}</b> <a class="btn btn-success">+ Visits</a>
+        <hr />
+
+        <ul>
+            <li ng-repeat="subItem in item.visits" ng-show="item.active">
+                Complaint:<b>{{subItem.complaint}}</b><br />
+                Billing Amount:<b>{{subItem.billing_amt}}</b><hr />
+            </li>
+        </ul>
+        <hr />
+    </li>
+</ul>-->
