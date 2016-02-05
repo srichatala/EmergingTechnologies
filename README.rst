@@ -3,4 +3,6 @@
 ====================================
 
 
-.. |travis-img| image:: https://travis-ci.org/srichatala/EmergingTechnologies.svg?branch=master
+
+.. |travis-img| image:: https://api.travis-ci.org/srichatala/EmergingTechnologies.png
+.. _travis-img: https://travis-ci.org/srichatala/EmergingTechnologies
