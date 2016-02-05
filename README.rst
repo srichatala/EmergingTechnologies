@@ -3,4 +3,4 @@
 ====================================
 
 
-.. |travis-img| image:: https://api.travis-ci.org/leocornus/angular-trac-client.png
+.. |travis-img| image:: https://travis-ci.org/srichatala/EmergingTechnologies.svg?branch=master
